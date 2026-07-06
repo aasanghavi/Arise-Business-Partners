@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARISE Business Partners — Accounting, CFO Advisory &amp; Business Support</title>
+<meta name="description" content="ARISE Business Partners helps business owners strengthen financial management, improve systems and make better commercial decisions — with clarity, confidence and control.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E2A4A;
+    --navy-deep:#081A30;
+    --navy-soft:#1C3E63;
+    --sky:#1C8FCD;
+    --sky-light:#5EB4E0;
+    --charcoal:#20242B;
+    --slate:#5A6572;
+    --paper:#F5F8FA;
+    --paper-2:#EDF2F5;
+    --white:#FFFFFF;
+    --line:#DEE5EA;
+    --line-dark:rgba(255,255,255,0.14);
+    --red:#E0303C;
+    --shadow: 0 20px 50px -25px rgba(14,42,74,0.35);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--charcoal);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    margin:0;
+    color:var(--navy-deep);
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  img{max-width:100%;display:block;}
+  section{position:relative;}
+  ::selection{background:var(--sky);color:#fff;}
+  :focus-visible{outline:2px solid var(--sky);outline-offset:3px;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 clamp(20px,4vw,48px);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--sky);
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:22px;height:1px;
+    background:var(--sky);
+    display:inline-block;
+  }
+
+  /* ---------- Premium Typographic CSS Logo Brand Mark ---------- */
+  .arise-brand-logo {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    user-select: none;
+    text-decoration: none;
+  }
+  .arise-brand-logo .main-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy-deep);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+  /* On dark backgrounds (like the footer), invert the primary color to clean white */
+  .on-dark-logo .main-title {
+    color: var(--white);
+  }
+  .arise-brand-logo .caret-accent {
+    font-family: 'Inter', sans-serif;
+    color: var(--sky);
+    font-size: 0.85em;
+    font-weight: 400;
+    vertical-align: 0.22em;
+    display: inline-block;
+    margin: 0 -1px;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .arise-brand-logo:hover .caret-accent {
+    transform: translateY(-3px);
+  }
+  .arise-brand-logo .suffix {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--slate);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-top: 4px;
+  }
+  .on-dark-logo .suffix {
+    color: rgba(255,255,255,0.7);
+  }
+  .arise-brand-logo .tag-credential {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.56rem;
+    font-weight: 600;
+    color: var(--sky);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    line-height: 1;
+    margin-top: 6px;
+    padding-top: 5px;
+    border-top: 1px solid var(--line);
+  }
+  .on-dark-logo .tag-credential {
+    border-top-color: var(--line-dark);
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(255,255,255,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:background .3s ease;
+  }
+  .nav-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:12px clamp(20px,4vw,48px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo-group{
+    display:flex;
+    align-items:center;
+    gap:18px;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+  }
+  .partner-logos{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-left:1px solid var(--line);
+    padding-left:14px;
+  }
+  .partner-logos img{
+    height:50px;
+    width:auto;
+    object-fit:contain;
+  }
+
+  nav.primary-nav{display:flex;align-items:center;gap:36px;}
+  .nav-links{display:flex;gap:30px;}
+  .nav-links a{
+    font-size:0.92rem;font-weight:500;color:var(--slate);
+    position:relative;padding:4px 0;
+  }
+  .nav-links a:hover{color:var(--navy-deep);}
+  .nav-links a::after{
+    content:'';position:absolute;left:0;bottom:0;width:0;height:2px;
+    background:var(--sky);transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:0.9rem;
+    padding:12px 22px;border-radius:7px;
+    border:1px solid transparent;
+    cursor:pointer;transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--navy-deep);color:#fff;}
+  .btn-primary:hover{background:var(--sky);transform:translateY(-1px);box-shadow:0 10px 24px -10px rgba(28,143,205,0.6);}
+  .btn-ghost{background:transparent;color:var(--navy-deep);border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--navy-deep);}
+  .btn-on-dark{background:var(--sky);color:#fff;}
+  .btn-on-dark:hover{background:var(--sky-light);transform:translateY(-1px);}
+  .btn-ghost-on-dark{background:transparent;color:#fff;border-color:var(--line-dark);}
+  .btn-ghost-on-dark:hover{border-color:#fff;}
+
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .nav-toggle span{display:block;width:22px;height:2px;background:var(--navy-deep);margin:5px 0;border-radius:2px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:190px 0 100px;
+    background:
+      radial-gradient(1100px 600px at 82% -10%, rgba(28,143,205,0.14), transparent 60%),
+      var(--white);
+    overflow:hidden;
+    position:relative;
+  }
+  .hero-grid{
+    display:block;
+    max-width:820px;
+  }
+  .hero h1{
+    font-size:clamp(2.35rem,4.4vw,3.7rem);
+    line-height:1.15;
+    margin:20px 0 22px;
+    font-weight:600;
+  }
+  .hero h1 .biz-title {
+    display:block;
+  }
+  .hero h1 .biz-title .hero-caret {
+    font-family: 'Inter', sans-serif;
+    color: var(--sky);
+    font-weight: 400;
+    vertical-align: 0.18em;
+    display: inline-block;
+    margin: 0 -2px;
+  }
+  .hero h1 .sub-title {
+    display:block;
+    font-size:0.35em;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    color:var(--sky);
+    margin-top:10px;
+    font-weight:600;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .hero h1 .tag-line {
+    display:block;
+    font-size:0.75em;
+    margin-top:22px;
+    font-weight:600;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--sky);
+  }
+  .hero-lead{
+    font-size:1.1rem;
+    color:var(--slate);
+    max-width:56ch;
+    margin-bottom:34px;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:46px;}
+  .hero-stats{
+    display:flex;gap:34px;flex-wrap:wrap;
+    border-top:1px solid var(--line);
+    padding-top:26px;
+  }
+  .stat b{
+    display:block;font-family:'Space Grotesk',sans-serif;
+    font-size:1.5rem;color:var(--navy-deep);font-weight:600;
+  }
+  .stat span{
+    font-family:'IBM Plex Mono',monospace;font-size:0.68rem;
+    letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);
+  }
+
+  /* ---------- Section shared ---------- */
+  .section{padding:100px 0;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-top:16px;font-weight:600;line-height:1.18;}
+  .section-head p{color:var(--slate);margin-top:16px;font-size:1.02rem;}
+  .on-dark{background:var(--navy-deep);color:rgba(255,255,255,0.86);}
+  .on-dark h2, .on-dark h3, .on-dark h4{color:#fff;}
+  .on-dark .section-head p{color:rgba(255,255,255,0.62);}
+  .bg-paper{background:var(--paper);}
+
+  /* Approach */
+  .approach-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+  .approach-item{background:#fff;padding:28px 30px;display:flex;gap:16px;align-items:flex-start;}
+  .approach-item svg{flex:none;margin-top:3px;}
+  .approach-item p{font-size:1rem;color:var(--charcoal);}
+
+  /* Why choose - two column */
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .why-list li{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:16px 0;border-bottom:1px solid var(--line);
+    font-size:1.02rem;
+  }
+  .why-list li:first-child{padding-top:0;}
+  .why-list svg{flex:none;margin-top:4px;}
+  .why-panel{
+    background:linear-gradient(160deg,var(--navy-deep),var(--navy-soft));
+    border-radius:16px;color:#fff;padding:36px 34px;
+    box-shadow:var(--shadow);
+  }
+  .why-panel h3{font-size:1.3rem;margin-bottom:14px;font-weight:600;}
+  .why-panel p{color:rgba(255,255,255,0.72);font-size:0.98rem;margin-bottom:22px;}
+
+  /* Services */
+  .services-list{border-top:1px solid var(--line);}
+  .service-row{border-bottom:1px solid var(--line);}
+  .service-row summary{
+    list-style:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:26px 4px;gap:24px;
+  }
+  .service-row summary::-webkit-details-marker{display:none;}
+  .service-row-title{display:flex;align-items:center;gap:20px;}
+  .service-index{
+    font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--sky);
+    width:28px;flex:none;font-weight:600;
+  }
+  .service-row h3{font-size:1.14rem;font-weight:600;}
+  .service-plus{
+    flex:none;width:30px;height:30px;border-radius:50%;
+    border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+    position:relative;transition:transform .3s ease, border-color .3s ease;
+  }
+  .service-plus::before,.service-plus::after{
+    content:'';position:absolute;background:var(--navy-deep);transition:transform .3s ease;
+  }
+  .service-plus::before{width:11px;height:1.6px;}
+  .service-plus::after{width:1.6px;height:11px;}
+  details[open] .service-plus{transform:rotate(45deg);border-color:var(--sky);}
+  details[open] summary{padding-bottom:6px;}
+  .service-body{padding:0 4px 30px 48px;max-width:760px;}
+  .service-body p{color:var(--slate);margin-bottom:16px;}
+  .tag-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .tag{
+    font-size:0.84rem;background:var(--paper-2);color:var(--navy-deep);
+    padding:7px 13px;border-radius:20px;font-weight:500;
+  }
+
+  /* Industries */
+  .chip-row{display:flex;flex-wrap:wrap;gap:12px;}
+  .chip{
+    padding:12px 20px;border:1px solid var(--line);border-radius:10px;
+    font-size:0.95rem;font-weight:500;color:var(--navy-deep);
+    background:#fff;transition:border-color .2s ease, transform .2s ease;
+  }
+  .chip:hover{border-color:var(--sky);transform:translateY(-2px);}
+
+  /* New business owners */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .checklist li{
+    display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line);
+    font-size:0.98rem;align-items:flex-start;
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist svg{flex:none;margin-top:3px;}
+  .ledger-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:34px;
+  }
+  .ledger-card h4{font-size:1.05rem;margin-bottom:18px;}
+  .ledger-card-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--slate);}
+  .ledger-card-row span:last-child{color:var(--sky);font-weight:600;}
+  .ledger-card-row:last-child{border-bottom:none;}
+
+  /* About / ARISE values */
+  .about-top{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;margin-bottom:70px;}
+  .about-top p{color:var(--slate);margin-bottom:16px;font-size:1.02rem;}
+  .exp-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px;
+  }
+  .exp-card .eyebrow{margin-bottom:16px;}
+  .exp-card p{color:var(--charcoal);font-size:1rem;}
+
+  .values-row{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .value-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:26px 18px;text-align:left;position:relative;overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .value-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .value-letter{
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.1rem;
+    color:var(--sky);line-height:1;margin-bottom:10px;display:block;
+  }
+  .value-card h4{font-size:0.98rem;margin-bottom:8px;}
+  .value-card p{font-size:0.85rem;color:var(--slate);line-height:1.5;}
+  .value-card:nth-child(3) .value-letter{color:var(--red);}
+
+  .who-tags{margin-top:26px;}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;}
+  .contact-info li{
+    display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line-dark);
+  }
+  .contact-info li:first-child{padding-top:0;}
+  .contact-info svg{flex:none;margin-top:2px;}
+  .contact-info b{display:block;font-size:0.7rem;font-family:'IBM Plex Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky-light);margin-bottom:4px;}
+  .contact-info span{color:rgba(255,255,255,0.85);font-size:1.02rem;}
+
+  .form-card{
+    background:#fff;color:var(--charcoal);border-radius:16px;padding:36px;
+  }
+  .form-card h3{font-size:1.2rem;margin-bottom:6px;}
+  .form-card>p{color:var(--slate);font-size:0.95rem;margin-bottom:24px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:0.82rem;font-weight:600;margin-bottom:7px;color:var(--navy-deep);}
+  .field input, .field textarea, .field select{
+    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;
+    font-family:'Inter',sans-serif;font-size:0.95rem;background:var(--paper);
+    color:var(--charcoal);
+  }
+  .field input:focus, .field textarea:focus, .field select:focus{
+    outline:none;border-color:var(--sky);background:#fff;
+  }
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .form-card .btn{width:100%;margin-top:6px;padding:14px;}
+  .form-note{font-size:0.78rem;color:var(--slate);margin-top:12px;text-align:center;}
+
+  /* Tagline strip */
+  .tagline-strip{
+    padding:64px 0;text-align:center;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .tagline-strip p{
+    font-family:'Space Grotesk',sans-serif;font-size:clamp(1.3rem,2.6vw,1.9rem);
+    color:var(--navy-deep);font-weight:600;max-width:820px;margin:0 auto;
+  }
+
+  /* Footer */
+  footer{background:var(--navy-deep);color:rgba(255,255,255,0.55);padding:56px 0 30px;}
+  .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;padding-bottom:36px;border-bottom:1px solid var(--line-dark);margin-bottom:26px;}
+  .footer-logo-block{display:flex;flex-direction:column;gap:14px;max-width:340px;}
+  .footer-logo-group{display:flex;align-items:center;gap:18px;}
+  .footer-partner-logos{display:flex;align-items:center;gap:12px;border-left:1px solid var(--line-dark);padding-left:14px;background:rgba(255,255,255,0.04);padding:6px 12px;border-radius:6px;}
+  .footer-partner-logos img{height:50px;width:auto;object-fit:contain;}
+  .footer-legal-notice{font-size:0.75rem;line-height:1.4;color:rgba(255,255,255,0.45);}
+  .footer-cols{display:flex;gap:64px;flex-wrap:wrap;}
+  .footer-col h5{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky-light);margin-bottom:14px;}
+  .footer-col a, .footer-col span{display:block;font-size:0.9rem;margin-bottom:10px;color:rgba(255,255,255,0.6);}
+  .footer-col a:hover{color:#fff;}
+  .disclaimer{font-size:0.78rem;line-height:1.7;color:rgba(255,255,255,0.4);max-width:900px;margin-bottom:22px;}
+  .copyright{font-size:0.8rem;color:rgba(255,255,255,0.38);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* Reveal on scroll */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .approach-list{grid-template-columns:1fr;}
+    .why-grid,.split,.about-top,.contact-grid{grid-template-columns:1fr;}
+    .values-row{grid-template-columns:repeat(3,1fr);}
+    .footer-top{flex-direction:column;}
+  }
+  @media (max-width:760px) {
+    .nav-links,.primary-nav .btn-ghost{display:none;}
+    .nav-toggle{display:block;}
+    nav.primary-nav{gap:14px;}
+    .hero{padding:130px 0 70px;}
+    .values-row{grid-template-columns:repeat(2,1fr);}
+    .field-row{grid-template-columns:1fr;}
+    .hero-stats{gap:24px;}
+    
+    /* FIX: Keep elements cleanly visible and scaling nicely side-by-side on smaller screen widths */
+    .logo-group { gap: 12px; }
+    .partner-logos { padding-left: 10px; gap: 6px; }
+    .partner-logos img { height: 32px; }
+  }
+  @media (max-width:520px){
+    .values-row{grid-template-columns:1fr 1fr;}
+    /* Shrink elements proportionally so header navigation links do not overlap on mobile viewports */
+    .partner-logos img { height: 26px; }
+  }
+
+  /* mobile menu */
+  .mobile-menu{
+    position:fixed;inset:0;background:var(--navy-deep);z-index:99;
+    display:flex;flex-direction:column;justify-content:center;padding:40px;
+    transform:translateY(-100%);transition:transform .35s ease;
+  }
+  .mobile-menu.open{transform:translateY(0);}
+  .mobile-menu a{color:#fff;font-family:'Space Grotesk',sans-serif;font-size:1.6rem;padding:14px 0;border-bottom:1px solid var(--line-dark);}
+  .mobile-menu .btn{margin-top:24px;}
+  .mobile-close{position:absolute;top:24px;right:24px;background:none;border:none;color:#fff;font-size:1.8rem;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="logo-group">
+      <div class="logo">
+        <a href="#home" class="arise-brand-logo" aria-label="ARISE Business Partners home">
+          <div class="main-title">A<span class="caret-accent">^</span>RISE</div>
+          <div class="suffix">Business Partners</div>
+          <div class="tag-credential">Chartered Accountants</div>
+        </a>
+      </div>
+      <div class="partner-logos">
+        <img src="chartered accountant au nz.png" alt="Chartered Accountants Australia New Zealand Logo">
+        <img src="chartered accountants worldwide.png" alt="Chartered Accountants Worldwide Network Member Logo">
+      </div>
+    </div>
+    <nav class="primary-nav">
+      <div class="nav-links">
+        <a href="#approach">Approach</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="btn btn-ghost">Book a Consultation</a>
+      <button class="nav-toggle" aria-label="Open menu" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="#approach">Approach</a>
+  <a href="#services">Services</a>
+  <a href="#industries">Industries</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-on-dark">Book a Consultation</a>
+</div>
+
+<main>
+
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Accounting · CFO Advisory · Business Support</span>
+        <h1>
+          <span class="biz-title">A<span class="hero-caret">^</span>RISE Business Partners</span>
+          <span class="sub-title">Chartered Accountants</span>
+          <span class="tag-line">Helping businesses <em>rise</em> with clarity, confidence and control.</span>
+        </h1>
+        <p class="hero-lead">We're more than accountants — we're practical business partners who help you understand your numbers, strengthen your systems, and make better commercial decisions.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+          <a href="#services" class="btn btn-ghost">See our services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>20+ yrs</b><span>Principal's experience</span></div>
+          <div class="stat"><b>Big 4 · Banking · Gov</b><span>Sector background</span></div>
+          <div class="stat"><b>15+ services</b><span>Across advisory &amp; compliance</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="approach">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our approach</span>
+        <h2>Clear, practical and outcome&#8209;focused — every time.</h2>
+        <p>We believe accounting and business support should help you understand where your business stands, where risks may exist, and what steps can improve performance and control.</p>
+      </div>
+
+      <div class="approach-list reveal">
+        <div class="approach-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>We listen carefully and take the time to understand your business.</p>
+        </div>
+        <div class="approach-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>We explain financial and business issues clearly, without jargon.</p>
+        </div>
+        <div class="approach-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>We help you make informed decisions with confidence.</p>
+        </div>
+        <div class="approach-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>We provide practical solutions — never generic advice.</p>
+        </div>
+        <div class="approach-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>We support you all year round — not only when a deadline arrives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="wrap why-grid">
+      <div class="reveal">
+        <span class="eyebrow">Why ARISE</span>
+        <h2 style="margin-top:16px;font-size:clamp(1.7rem,3vw,2.2rem);">A partner who understands where you want to go.</h2>
+        <ul class="why-list" style="margin-top:30px;">
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Clear communication, always</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Practical, commercial guidance</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> CFO-level insight for growing businesses</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Support across setup, funding, audit and systems</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Personalised service, genuine interest in your success</li>
+        </ul>
+      </div>
+      <div class="why-panel reveal">
+        <span class="eyebrow" style="color:#5EB4E0;">Build a stronger future</span>
+        <h3 style="margin-top:14px;">Your business deserves more than basic accounting.</h3>
+        <p>It deserves a partner who helps you stay organised, understand your numbers, improve controls and make better decisions — at every stage of your journey.</p>
+        <a href="#contact" class="btn btn-on-dark">Speak with ARISE today</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What we do</span>
+        <h2>Services built around your business, not a template.</h2>
+        <p>Practical, tailored support — from day-to-day bookkeeping through to CFO-level advisory, transactions and systems review.</p>
+      </div>
+
+      <div class="services-list reveal">
+
+        <details class="service-row" open>
+          <summary>
+            <div class="service-row-title"><span class="service-index">01</span><h3>Business Accounting &amp; Financial Reporting</h3></div>
+            <span class="service-plus"></span>
+          </summary>
+          <div class="service-body">
+            <p>Accurate records, meaningful financial information, and a clear view of business performance — the foundation everything else builds on.</p>
+            <div class="tag-row">
+              <span class="tag">Annual financial statements</span><span class="tag">Management accounts</span><span class="tag">Performance reporting</span><span class="tag">Accounts reconciliation</span><span class="tag">Company, trust &amp; partnership reporting</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="service-row">
+          <summary>
+            <div class="service-row-title"><span class="service-index">02</span><h3>Bookkeeping &amp; Payroll Support</h3></div>
+            <span class="service-plus"></span>
+          </summary>
+          <div class="service-body">
+            <p>Reliable day-to-day processes so you always have accurate financial information on hand — not just at year end.</p>
+            <div class="tag-row">
+              <span class="tag">Cloud bookkeeping</span><span class="tag">Bank reconciliations</span><span class="tag">Payables &amp; receivables</span><span class="tag">Payroll administration</span><span class="tag">Superannuation admin</span><span class="tag">Catch-up bookkeeping</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="service-row">
+          <summary>
+            <div class="service-row-title"><span class="service-index">03</span><h3>CFO Advisory</h3></div>
+            <span class="service-plus"></span>
+          </summary>
+          <div class="service-body">
+            <p>Senior finance insight for growing businesses not yet ready for a full-time CFO — helping you make better decisions, faster.</p>
+            <div class="tag-row">
+              <span class="tag">Cash flow forecasting</span><span class="tag">Budgeting</span><span class="tag">Board &amp; lender reporting</span><span class="tag">Profitability analysis</span><span class="tag">KPI tracking</span><span class="tag">Margin analysis</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="service-row">
+          <summary>
+            <div class="service-row-title"><span class="service-index">04</span><h3>Business Purchase &amp; Sale Support</h3></div>
+            <span class="service-plus"></span>
+          </summary>
+          <div class="service-body">
+            <p>Understand the numbers behind the deal — from due diligence through to transaction readiness.</p>
+            <div class="tag-row">
+              <span class="tag">Financial due diligence</span><span class="tag">Normalised earnings</span><span class="tag">Working capital assessment</span><span class="tag">Valuation coordination</span><span class="tag">Lawyer &amp; lender liaison</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="service-row">
+          <summary>
+            <div class="service-row-title"><span class="service-index">05</span><h3>Company Setup &amp; Structuring</h3></div>
+            <span class="service-plus"></span>
+          </summary>
+          <div class="service-body">
+            <p>Get the foundations right from day one, in coordination with relevant professional advisers where required.</p>
+            <div class="tag-row">
+              <span class="tag">Company setup</span><span class="tag">ABN &amp; registration</span><span class="tag">Trust &amp; partnership setup</span><span class="tag">Structure review</span><span class="tag">Accounting system setup</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="service-row">
+          <summary>
+            <div class="service-row-title"><span class="service-index">06</span><h3>Finance &amp; Loan Support</h3></div>
+            <span class="service-plus"></span>
+          </summary>
+          <div class="service-body">
+            <p>Clear, lender-ready financial information to support working capital, equipment finance and growth funding discussions.</p>
+            <div class="tag-row">
+              <span class="tag">Loan application packs</span><span class="tag">Cash flow forecasts</span><span class="tag">Management accounts for lenders</span><span class="tag">Broker coordination</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="service-row">
+          <summary>
+            <div class="service-row-title"><span class="service-index">07</span><h3>Grant &amp; Funding Application Support</h3></div>
+            <span class="service-plus"></span>
+          </summary>
+          <div class="service-body">
+            <p>Stronger financial inputs for grant and funding requests — budgets, forecasts and supporting schedules done properly.</p>
+            <div class="tag-row">
+              <span class="tag">Grant budgets</span><span class="tag">Financial forecasts</span><span class="tag">Project cost summaries</span><span class="tag">Acquittal support</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="service-row">
+          <summary>
+            <div class="service-row-title"><span class="service-index">08</span><h3>SMSF Accounting Support</h3></div>
+            <span class="service-plus"></span>
+          </summary>
+          <div class="service-body">
+            <p>SMSF accounting records and financial information, prepared alongside your auditors, advisers and registered tax agent.</p>
+            <div class="tag-row">
+              <span class="tag">SMSF accounting records</span><span class="tag">Financial statement support</span><span class="tag">Audit support schedules</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="service-row">
+          <summary>
+            <div class="service-row-title"><span class="service-index">09</span><h3>Audit Preparation &amp; Support</h3></div>
+            <span class="service-plus"></span>
+          </summary>
+          <div class="service-body">
+            <p>Audit-ready information and efficient responses to auditor requests, so audits take less time and less stress.</p>
+            <div class="tag-row">
+              <span class="tag">Audit file preparation</span><span class="tag">Balance sheet reconciliations</span><span class="tag">Evidence collation</span><span class="tag">Auditor liaison</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="service-row">
+          <summary>
+            <div class="service-row-title"><span class="service-index">10</span><h3>IT Audit, Systems &amp; Controls Advisory</h3></div>
+            <span class="service-plus"></span>
+          </summary>
+          <div class="service-body">
+            <p>Practical systems and controls reviews, drawing on experience across banking, government and Big 4 environments.</p>
+            <div class="tag-row">
+              <span class="tag">IT controls review</span><span class="tag">Process walkthroughs</span><span class="tag">Segregation of duties</span><span class="tag">Governance &amp; risk support</span>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper" id="industries">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Industries we support</span>
+        <h2>We take the time to understand your industry.</h2>
+        <p>Every business is different — our support is tailored to your circumstances, not delivered as a one-size-fits-all solution.</p>
+      </div>
+      <div class="chip-row reveal">
+        <span class="chip">Professional services</span>
+        <span class="chip">Medical &amp; allied health</span>
+        <span class="chip">Construction &amp; trades</span>
+        <span class="chip">Retail &amp; e-commerce</span>
+        <span class="chip">Hospitality</span>
+        <span class="chip">Transport &amp; logistics</span>
+        <span class="chip">Property &amp; real estate</span>
+        <span class="chip">Consulting &amp; contracting</span>
+        <span class="chip">Technology &amp; startups</span>
+        <span class="chip">Family businesses</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="eyebrow">Starting out</span>
+        <h2 style="margin-top:16px;font-size:clamp(1.7rem,3vw,2.2rem);">Start with the right financial foundations.</h2>
+        <p style="color:var(--slate);margin-top:16px;">Starting a business is exciting — but it comes with important financial, accounting and operational decisions. We help new business owners set up properly from the beginning, so starting correctly saves time, money and stress later.</p>
+        <ul class="checklist" style="margin-top:26px;">
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Company setup &amp; registration coordination</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Accounting software &amp; bookkeeping setup</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Payroll &amp; superannuation administration</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Budgeting, cash flow &amp; reporting processes</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10.5L8 14.5L16 5.5" stroke="#1C8FCD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Internal controls &amp; approval processes</li>
+        </ul>
+      </div>
+      <div class="ledger-card reveal">
+        <h4>A simple starting checklist</h4>
+        <div class="ledger-card-row"><span>Business structure</span><span>In progress</span></div>
+        <div class="ledger-card-row"><span>Accounting system</span><span>Ready to set up</span></div>
+        <div class="ledger-card-row"><span>Payroll &amp; super</span><span>Ready to set up</span></div>
+        <div class="ledger-card-row"><span>Cash flow plan</span><span>Let's build it</span></div>
+        <div class="ledger-card-row"><span>Reporting rhythm</span><span>Monthly / quarterly</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tagline-strip reveal">
+    <div class="wrap"><p>"From numbers to decisions — helping your business rise."</p></div>
+  </div>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="about-top">
+        <div class="reveal">
+          <span class="eyebrow">About ARISE</span>
+          <h2 style="margin-top:16px;font-size:clamp(1.7rem,3vw,2.2rem);">Accountants and business advisers who work alongside you.</h2>
+          <p style="margin-top:20px;">ARISE Business Partners was established to give business owners, professionals and investors clear, practical and reliable accounting and advisory support. Running a business involves constant decisions — cash flow, staffing, systems, compliance, finance, growth, risk and reporting. Our role is to simplify those decisions with accurate information and commercially informed guidance.</p>
+          <p>We work with clients who want more than basic record-keeping — a professional partner who understands their goals, responds when needed, and helps them see the bigger picture.</p>
+          <div class="who-tags chip-row">
+            <span class="chip">Small &amp; medium businesses</span>
+            <span class="chip">Family-owned businesses</span>
+            <span class="chip">Sole traders &amp; consultants</span>
+            <span class="chip">Property investors</span>
+            <span class="chip">SMSF clients</span>
+          </div>
+        </div>
+        <div class="exp-card reveal">
+          <span class="eyebrow">Experience that adds value</span>
+          <p style="margin-top:16px;">The firm's Principal brings <strong>more than 20 years</strong> of professional experience across Big 4 accounting firms, banking and financial institutions, and government organisations.</p>
+          <p style="margin-top:14px;">This experience allows ARISE to support clients not only with accounting and reporting, but with broader business issues — finance readiness, audit preparation, governance, systems, controls and process improvement.</p>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <span class="eyebrow">What ARISE stands for</span>
+        <h2 style="margin-top:16px;margin-bottom:30px;font-size:clamp(1.7rem,3vw,2.2rem);">The name reflects what we want for our clients.</h2>
+        <div class="values-row">
+          <div class="value-card"><span class="value-letter">A</span><h4>Accuracy</h4><p>We take care with the details, because your financial information matters.</p></div>
+          <div class="value-card"><span class="value-letter">R</span><h4>Reliability</h4><p>We aim to be responsive, consistent and dependable.</p></div>
+          <div class="value-card"><span class="value-letter">I</span><h4>Insight</h4><p>We help you understand what your numbers mean, not just what they are.</p></div>
+          <div class="value-card"><span class="value-letter">S</span><h4>Support</h4><p>We work with you through decisions, reporting needs and growth.</p></div>
+          <div class="value-card"><span class="value-letter">E</span><h4>Empowerment</h4><p>We want clients to feel informed, confident and in control.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark" id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <span class="eyebrow" style="color:#5EB4E0;">Get in touch</span>
+        <h2 style="margin-top:16px;font-size:clamp(1.7rem,3vw,2.2rem);">Let's talk about your business.</h2>
+        <p style="margin-top:16px;color:rgba(255,255,255,0.65);">Whether you need accounting support, CFO advisory, bookkeeping, finance support, audit preparation, grant application support or systems and controls advice — we're here to help.</p>
+
+        <ul class="contact-info" style="margin-top:34px;">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5Zm4 8a4 4 0 0 1-8 0V7a4 4 0 0 1 8 0Zm-4 4a9 9 0 0 0-9 9 1 1 0 0 0 2 0 7 7 0 0 1 14 0 1 1 0 0 0 2 0 9 9 0 0 0-9-9Z" fill="#5EB4E0"/></svg>
+            <div><b>Name</b><span>Aditya Singhal</span></div>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2.9c0-.5.4-1 1-1h3.4c.5 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.1 2.3Z" stroke="#5EB4E0" stroke-width="1.6"/></svg>
+            <div><b>Mobile</b><span>0466926005</span></div>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3V6Z" stroke="#5EB4E0" stroke-width="1.6"/><path d="m3 7 9 6 9-6" stroke="#5EB4E0" stroke-width="1.6"/></svg>
+            <div><b>Email</b><span>info@arisepartners.com.au</span></div>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" stroke="#5EB4E0" stroke-width="1.6"/><circle cx="12" cy="10" r="2.5" stroke="#5EB4E0" stroke-width="1.6"/></svg>
+            <div><b>Location</b><span>Sydney, Australia</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="form-card reveal">
+        <h3>Book a consultation</h3>
+        <p>Tell us a little about your business — we'll be in touch to arrange a time to talk.</p>
+        <form onsubmit="event.preventDefault(); this.reset(); document.getElementById('formSuccess').style.display='block';">
+          <div class="field-row">
+            <div class="field"><label for="fname">Name</label><input id="fname" type="text" required placeholder="Your full name"></div>
+            <div class="field"><label for="fbiz">Business name</label><input id="fbiz" type="text" placeholder="Optional"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="femail">Email</label><input id="femail" type="email" required placeholder="you@business.com"></div>
+            <div class="field"><label for="fphone">Phone</label><input id="fphone" type="tel" placeholder="Optional"></div>
+          </div>
+          <div class="field">
+            <label for="ftopic">How can we help?</label>
+            <select id="ftopic">
+              <option>Business accounting &amp; reporting</option>
+              <option>Bookkeeping &amp; payroll</option>
+              <option>CFO advisory</option>
+              <option>Business purchase or sale</option>
+              <option>Company setup &amp; structuring</option>
+              <option>Finance / loan support</option>
+              <option>Grant &amp; funding support</option>
+              <option>SMSF accounting</option>
+              <option>Audit preparation</option>
+              <option>Systems &amp; controls advisory</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fmsg">A little about your business</label>
+            <textarea id="fmsg" rows="4" placeholder="What are you working on right now?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Request a consultation</button>
+          <p class="form-note" id="formSuccess" style="display:none;color:#1C8FCD;">Thanks — this form is a demo. Connect it to your email or CRM to start receiving enquiries.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-logo-block">
+        <div class="footer-logo-group">
+          <div class="footer-logo">
+            <a href="#home" class="arise-brand-logo on-dark-logo">
+              <div class="main-title">A<span class="caret-accent">^</span>RISE</div>
+              <div class="suffix">Business Partners</div>
+              <div class="tag-credential">Chartered Accountants</div>
+            </a>
+          </div>
+          <div class="footer-partner-logos">
+            <img src="chartered accountant au nz.png" alt="Chartered Accountants Australia New Zealand Logo">
+            <img src="chartered accountants worldwide.png" alt="Chartered Accountants Worldwide Network Member Logo">
+          </div>
+        </div>
+        <div class="footer-legal-notice">
+          Limited Liability by a scheme approved under Professional Standards Legislation<br>
+          <strong>ABN: 40673060930</strong>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <a href="#approach">Approach</a>
+          <a href="#services">Services</a>
+          <a href="#industries">Industries</a>
+          <a href="#about">About</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <span>info@arisepartners.com.au</span>
+          <span>0466926005</span>
+          <span>Sydney, Australia</span>
+        </div>
+      </div>
+    </div>
+    <p class="disclaimer">ARISE Business Partners does not provide services that require registration as a tax agent unless such services are provided through, or in coordination with, an appropriately registered tax agent. The information on this website is general in nature and should not be taken as tax, legal or financial product advice. Clients should seek advice tailored to their individual circumstances from an appropriately qualified professional.</p>
+    <div class="copyright">
+      <span>&copy; <span id="year"></span> ARISE Business Partners. All rights reserved.</span>
+      <span>Helping your business rise with clarity, confidence and control.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+  navToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
+  mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Only one details open at a time in services list
+  document.querySelectorAll('.service-row').forEach(row => {
+    row.addEventListener('toggle', () => {
+      if (row.open) {
+        document.querySelectorAll('.service-row').forEach(r => { if (r !== row) r.open = false; });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
